@@ -1,0 +1,899 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  padding: 0;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+#body_ddd {
+  background-color: #252525;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.line {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+}
+
+.line2 {
+  position: absolute;
+  right: 57%;
+  z-index: -1;
+  width: 50.2vw;
+}
+
+.line img {
+  width: 100%;
+}
+
+.line2 img {
+  width: 100%;
+}
+#h6_main {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+  font-size: 3vw;
+  line-height: 5vw;
+  letter-spacing: 1px;
+  text-align: left;
+  white-space: nowrap;
+  width: 93%;
+
+  padding: 4% 0;
+  min-block-size: 1vw;
+  color: #ffffff;
+}
+
+#sait {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3vw;
+  line-height: 5vw;
+  font-weight: 600;
+  padding: 0 29.5vw 0 0;
+  width: 93%;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+#p_nakrytka_main {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.4vw;
+  line-height: 2.8vw;
+  padding-left: 3.3%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: left;
+  word-spacing: 4px;
+  margin: 0;
+  color: #ffffff;
+  width: 70%;
+}
+
+#section_velkom {
+  z-index: 100;
+  width: 100%;
+}
+#maindiv {
+  /* Added to make the background image cover the entire div */
+  height: 50vh;
+  width: 100%;
+  display: flex;
+}
+
+#div_h6_main {
+  text-align: left;
+  width: 40%;
+}
+
+#video {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+  width: 40%;
+  margin-top: 4%;
+}
+
+main {
+  width: 100%;
+}
+
+iframe {
+  height: 50vh;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 20px;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 24%;
+  margin-right: 58%;
+}
+
+.telegram {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.youtube {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.instagram {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.facebook {
+  grid-area: 2 / 4 / 3 / 5;
+}
+.tiktok {
+  grid-area: 2 / 5 / 3 / 6;
+}
+.twitter {
+  grid-area: 2 / 6 / 3 / 7;
+}
+.lets_go {
+  background-color: #870808;
+  border: none;
+  grid-area: 3 / 3 / 4 / 5;
+  margin-top: 50px;
+  width: 200px;
+  height: 6vh;
+  display: flex;
+  font-family: "Bebas Neue", sans-serif;
+  align-items: flex-start;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.87vw;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: left;
+  padding-bottom: 14%;
+}
+
+.telegram,
+.youtube,
+.instagram,
+.facebook,
+.tiktok,
+.twitter {
+  background-color: rgba(30%, 30%, 30%, 0.4);
+  opacity: 99%;
+
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 8.5vw;
+  height: 15vh;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  position: relative;
+
+  transition-duration: 0.3s;
+}
+
+.telegram p,
+.youtube p,
+.instagram p,
+.facebook p,
+.tiktok p,
+.twitter p {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 400;
+  text-align: left;
+  font-size: 1.2vw;
+  height: 30px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  transform: scaleY(1.4); /* Растягиваем текст в вертикальном направлении */
+}
+
+.telegram .img_vibor,
+.youtube .img_vibor,
+.instagram .img_vibor,
+.facebook .img_vibor,
+.tiktok .img_vibor,
+.twitter .img_vibor {
+  width: 30%;
+}
+
+.telegram,
+.youtube,
+.instagram,
+.facebook,
+.tiktok,
+.twitter {
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.youtube .cross,
+.instagram .cross,
+.facebook .cross,
+.tiktok .cross,
+.twitter .cross {
+  width: 86%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+
+.youtube:hover .cross,
+.instagram:hover .cross,
+.facebook:hover .cross,
+.tiktok:hover .cross,
+.twitter:hover .cross {
+  opacity: 1;
+}
+
+.telegram:hover {
+  color: #ffffff;
+
+  -webkit-box-shadow: 0px 0px 26px -1px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 26px -1px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 26px -1px rgba(255, 255, 255, 1);
+}
+
+.telegram:hover img {
+  color: #ffffff;
+  filter: brightness(0) invert(1);
+}
+
+.telegram::before {
+  width: 8.5vw;
+  height: 15vh;
+  position: absolute;
+  content: "";
+  background: #00b3ff;
+  border-radius: 50%;
+  left: -100%;
+  top: 0;
+  transition-duration: 0.3s;
+  mix-blend-mode: screen;
+}
+
+.telegram:hover::before {
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  transition-duration: 0.3s;
+  transform: translate(100%, 0%);
+  border-radius: 0;
+}
+
+.kalkulator {
+  background-color: #252525;
+  max-width: 750px;
+  width: 750px;
+
+  border-radius: 8px;
+  padding: 50px;
+  height: auto;
+  margin: 0;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 16px 0px rgba(66, 68, 90, 1);
+}
+.text_naim {
+  font-size: 35px;
+}
+.text_socseti {
+  font-size: 15px;
+  color: gray;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 15px;
+  font-size: 25px;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.services_tetx {
+  font-size: 20px;
+  color: #ffffff;
+  padding-top: 5%;
+  text-align: left;
+}
+select {
+  background-color: #373737;
+  color: #ffffff;
+}
+p {
+  color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+  max-height: 15vh;
+
+  border-radius: 5rem;
+  font-size: 14px;
+}
+button {
+  border: 2px solid #d9d9d9;
+  padding: 10px;
+  width: 24%;
+  font-size: 14px;
+  background-color: #373737;
+  border-radius: 0.2rem;
+  color: #d9d9d9;
+}
+
+.bts-second-group p {
+  display: inline-block;
+  margin: auto;
+}
+
+.bts-second-group {
+  margin: 2% 4%;
+  border-radius: 0.5rem;
+}
+
+.bts {
+  display: flex;
+  justify-content: center;
+  margin: 2% 4%;
+  border-radius: 0.5rem;
+}
+.button_img {
+  margin: 2% 4%;
+  border-radius: 0.5rem;
+}
+.select img {
+  width: 35px;
+  height: 25px;
+}
+.option.option_img {
+  width: 5%;
+}
+.option {
+  display: flex;
+  width: 100%;
+}
+.option_img {
+  margin: 0;
+  padding: 0;
+  border: #c6c6c6 2px solid;
+  width: 100%;
+  padding: 3%;
+  background-color: #373737;
+  border-radius: 0.2rem;
+}
+.option_img img {
+  padding-right: 2%;
+}
+
+.buttons button.focus_button {
+  border: 2px#870808 solid;
+}
+.spin_option {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.Type_of_tipping {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  max-height: 15vh;
+  margin: 0;
+}
+
+.spin_option div p {
+  border-radius: 0.2rem;
+  font-size: 15px;
+  padding: 2px;
+}
+
+.services_text {
+  font-size: 20px;
+  color: #d9d9d9;
+  margin: 0;
+  padding: 3% 0;
+}
+.input_int {
+  margin-top: 10%;
+  padding: 2%;
+  width: 95.7%;
+  font-size: 17px;
+  background-color: #373737;
+  border-radius: 0.5rem;
+  color: #d9d9d9;
+}
+.par {
+  font-size: 20px;
+  color: #ffffff;
+  width: 100%;
+}
+
+.div_reg {
+  display: flex;
+  justify-content: center;
+  padding: 3% 0 0 0;
+}
+.div_reg button {
+  background-color: #870808;
+  color: white;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.prays .par {
+  display: flex;
+  justify-content: flex-start;
+}
+.prays_p {
+  width: 28%;
+}
+.prays {
+  display: flex;
+  text-align: center;
+}
+.prays_p {
+  font-size: 25px;
+  color: rgb(3, 173, 3);
+}
+.options button.focus_button {
+  border: 2px#870808 solid;
+}
+.options {
+  width: 100%;
+  font-size: 12px;
+}
+
+.hideButton {
+  width: 40%;
+  background: #363636;
+  color: #d9d9d9;
+  border-radius: 0.2rem;
+  font-size: 17px;
+  border-radius: 0.5rem;
+  margin-left: 25%;
+}
+
+.options button {
+  margin-bottom: 10px;
+}
+.options .button_img {
+  width: 10%;
+}
+
+.button_img img {
+  width: 25px;
+  height: 25px;
+}
+.button_img {
+  transition: opacity 0.9s ease;
+}
+
+#section_kalkylytor {
+  padding: 7% 1% 7% 2%;
+  display: flex;
+}
+
+.grid_kalkylytor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+  height: auto;
+}
+
+.kalk {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.grafikk {
+  grid-area: 2 / 4 / 3 / 5;
+}
+.shield {
+  grid-area: 3 / 4 / 4 / 5;
+}
+.oclick {
+  grid-area: 4 / 4 / 5 / 5;
+}
+
+.aside_kalkykytor {
+  margin-left: 10%; /* Adjust margin for smaller screens */
+  padding-left: 5vw; /* Add margin between aside elements */
+
+  width: 70%;
+  margin-top: -1%;
+}
+
+.aside_kalkykytor h3 {
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 10%;
+  font-size: 1.8vw; /* Use em for relative font size */
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0em;
+  color: #ffffff;
+  text-align: left;
+}
+
+.aside_kalkykytor p {
+  font-size: 0.9vw;
+  font-family: "PT Sans Narrow", sans-serif;
+  line-height: 1.8; /* Use em for relative font size */
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+}
+
+#grafik,
+#zit,
+#oclock {
+  width: 15%; /* Use relative width for the images */
+  position: relative;
+
+  right: 5.8vw;
+  top: 15vh; /* Add margin between images and text */
+  min-width: 60px;
+}
+#grafik,
+#oclock {
+  width: 18%;
+}
+
+.social {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 150px;
+  grid-row-gap: 100px;
+  width: 60.5%;
+  height: 99vh;
+  align-items: center;
+}
+
+.div1 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.div2 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.div3 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.div4 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.div5 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.div6 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.div1,
+.div2,
+.div3,
+.div4,
+.div5,
+.div6 {
+  width: 15vw;
+  height: 24vh;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 11px;
+  background: #3f3f3f99;
+  border: none;
+
+  /* Updated to center vertically and horizontally */
+  position: relative; /* Added position relative */
+}
+
+.tikitoki {
+  margin: 0 10% 0 1%;
+}
+
+.social_img {
+  position: absolute;
+  width: 15%;
+  top: 6%;
+  left: 6%;
+}
+
+.social h1 {
+  font-family: "Big Shoulders Display", sans-serif;
+  padding: 0 30% 0 24%;
+  font-size: 1.6vw;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.social p {
+  font-family: "PT Sans Narrow", sans-serif;
+  color: #ffffff;
+  padding: 10% 0;
+  font-size: 0.7vw;
+  font-weight: 800;
+  line-height: 28px;
+  letter-spacing: 0px;
+  padding-bottom: 10%;
+  text-align: center;
+}
+
+#social_h6 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2vw;
+  font-weight: 600;
+  line-height: 61px;
+  letter-spacing: 1px;
+  text-align: left;
+  width: 87%;
+}
+
+.yskygi_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 120px;
+  grid-row-gap: 0px;
+  width: 64%;
+  height: 20vw;
+  margin-right: 22%;
+}
+
+.podpiski {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.reakwii {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.komment {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.prosmotr {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.podpiski,
+.reakwii,
+.komment,
+.prosmotr {
+  padding-top: 15%;
+  height: 14vw;
+  width: 14vw;
+}
+
+#yslygi h1 {
+  letter-spacing: 1px;
+  font-family: "Bebas Neue", sans-serif;
+  width: 87%;
+  height: 15vh;
+  font-size: 2.2vw;
+  font-weight: 600;
+  line-height: 28px;
+
+  text-align: left;
+}
+
+#yslygi h6 {
+  padding: 0 60% 0 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.6vw;
+  font-weight: 600;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#yslygi p {
+  font-family: "PT Sans Narrow", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.9vw;
+  font-weight: 600;
+  line-height: 28px;
+  padding-top: 13%;
+
+  text-align: left;
+}
+
+#yslygi img {
+  padding: 0 0 4% 0%;
+  width: 27%;
+}
+
+#servis {
+  height: 60vh;
+  width: 87%;
+}
+
+#servis h4 {
+  padding: 4% 0% 10% 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2vw;
+  font-weight: 600;
+  line-height: 61px;
+  letter-spacing: 1px;
+  text-align: left;
+  height: 1vh;
+}
+
+#servis p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1vw;
+  font-weight: 300;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 100%;
+  color: #d9d9d9;
+}
+
+@media only screen and (max-width: 599px) {
+  .kalkulator {
+    padding: 20px;
+  }
+
+  .buttons button {
+    width: 100%; /* Устанавливаем кнопки на 100% ширины экрана */
+    margin-bottom: 10px;
+  }
+
+  .button_img {
+    width: 30%; /* Уменьшаем ширину кнопок с изображениями */
+  }
+
+  .options button {
+    width: 30%; /* Уменьшаем ширину кнопок в выпадающем списке */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .aside_kalkykytor h3,
+  .aside_kalkykytor p {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
+  }
+
+  #grafik,
+  #zit,
+  #oclock {
+    width: 30%; /* Adjust width for smaller screens */
+    right: 7vw;
+    top: 5vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust calculator size and text */
+  .kalkulator {
+    width: 70%;
+    height: auto;
+    padding: 5%;
+  }
+
+  /* Adjust font sizes */
+  .text_naim {
+    font-size: 20px;
+  }
+
+  .text_socseti {
+    font-size: 12px;
+  }
+
+  .services_text,
+  .services {
+    font-size: 12px;
+  }
+
+  .buttons,
+  .spin_option {
+    width: 100%;
+    padding-left: 5%;
+  }
+  .buttons,
+  .Type_of_tipping {
+    width: 100%;
+    padding-left: 5%;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .input_int {
+    font-size: 14px;
+  }
+
+  .Par,
+  .prays_p {
+    font-size: 16px;
+  }
+
+  .div_reg button {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .kalkulator {
+    width: 87vw;
+    padding: 5%;
+  }
+
+  /* Уменьшаем размеры шрифтов */
+  .text_naim {
+    font-size: 20px;
+  }
+
+  .text_socseti {
+    font-size: 12px;
+  }
+
+  .services_text,
+  .services {
+    font-size: 12px;
+  }
+
+  button:not(.button_img) {
+    width: 80%; /* Ширина кнопок на 80% ширины калькулятора */
+    padding-left: 10%; /* Отступ слева для выравнивания */
+  }
+
+  /* Уменьшаем размер кнопок и текста на них */
+  button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  /* Уменьшаем размер поля ввода */
+  .input_int {
+    font-size: 14px;
+  }
+
+  /* Изменяем размеры некоторых других текстовых элементов */
+  .Par,
+  .prays_p {
+    font-size: 16px;
+  }
+
+  /* Уменьшаем размер кнопок регистрации */
+  .div_reg button {
+    font-size: 16px;
+    padding: 8px;
+  }
+}

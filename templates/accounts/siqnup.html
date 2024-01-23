@@ -1,0 +1,49 @@
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/siqnup.css' %}" />
+    <title>Регистрация</title>
+    <div class="login-box">
+      <form method="POST">
+          {% csrf_token %}
+        <div class="block_form">
+          <a href="{% url 'login' %}" class="sign_up">Войти</a>
+
+          <div class="user-box">
+              {{ form.first_name }}
+            <label>Имя</label>
+          </div>
+          <div class="user-box">
+            {{ form.last_name }}
+            <label>Фамилия</label>
+          </div>
+          <div class="user-box">
+            {{ form.username }}
+            <label>Логин</label>
+          </div> 
+          <div class="user-box">
+            {{ form.email }}
+            <label>Почта</label>
+          </div> 
+          <div class="user-box">
+            {{ form.password1 }}
+            <label>Пароль</label>
+          </div> 
+          <div class="user-box">
+            {{ form.password2 }}
+            <label>Повтор пароля</label>
+          </div>
+                {% for message in messages %}
+                   <div class="eror">
+                        {{ message }}
+                   </div> 
+                {% endfor %}
+          <center>
+            <input class="send" type="submit" value="Зарегистрироваться"><span></span></center>
+              <span></span>
+            </a>
+          </center>
+        </div>
+      </form>
+    </div>
+{% endblock %}

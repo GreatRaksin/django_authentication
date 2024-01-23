@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Профиль пользователя {{ profile.user.username.upper }} | <a href="{% url 'change-profile' %}"><i class="fa-solid fa-edit"></i></a></h1>
+    <hr>
+    <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
+    <p>Баланс: {{ profile.balance }}</p>
+    <p>Сссылка на аккаунт: <a href="{{ profile.tg_link }}"><i class="fa-brands fa-telegram"></i> Telegram</a></p>
+{% endblock %}
