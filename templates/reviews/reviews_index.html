@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+</head>
+<body>
+
+{% for review in reviews %}
+	<p>{{ review.user }}</p>
+    <p>{{ review.subject }}</p>
+    <p>{{ review.review }}</p>
+    <p>{% for i in '12345' %}
+        {% if i|add:'0' <= review.rating %}
+            <span style="color: #e99b00;">★</span>
+        {% else %}
+            <span style="color: #ccc;">★</span>
+        {% endif %}
+    {% endfor %}
+    </p>
+{% endfor %}
+
+</body>
+</html>

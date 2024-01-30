@@ -1,0 +1,142 @@
+@import url("https://fonts.cdnfonts.com/css/bebas-neue");
+
+body {
+  background-color: #252525;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 420px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.sign_up {
+  color: #870808;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.send {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  background-color: #252525;
+
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.login-box form .send {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.login-box .send:hover {
+  background: #870808;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #870808, 0 0 25px #870808, 0 0 50px #870808,
+    0 0 100px #870808;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes pulsateShadowAnimation {
+  50% {
+    box-shadow: 0 0 25px 6px rgba(163, 15, 15, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 25px 3px rgba(163, 15, 15, 0.3);
+  }
+}
+
+.eror {
+  border: 2px solid #8708089a;
+  background-color: #8708089a;
+  color: #fff;
+  font-size: 17px;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 0 25px 3px rgba(163, 15, 15, 0.3);
+  animation: pulsateShadowAnimation 2s infinite; /* Adjust the duration as needed */
+  transition: box-shadow 0.7s ease; /* Add smooth transition for box-shadow changes */
+}
+
+.eror:hover {
+  animation: none; /* Disable animation on hover for a stable appearance */
+  box-shadow: 0 0 25px 6px rgba(163, 15, 15, 0.6); /* Set a different shadow on hover */
+}

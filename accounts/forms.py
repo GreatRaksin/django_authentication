@@ -1,14 +1,13 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
-from .models import UserProfile
+from .models import UserProfile, ReviewsRating
 
 
 class SignupForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email',
-                  'username', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'email', 'username', 'password1', 'password2')
 
 
 class LoginForm(forms.Form):
@@ -19,4 +18,10 @@ class LoginForm(forms.Form):
 class UserUpdateForm(UserChangeForm):
     class Meta:
         model = UserProfile
-        exclude = ('balance',)
+        exclude = ['balance']
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = ReviewsRating
+        fields = ['subject', 'review', 'rating']

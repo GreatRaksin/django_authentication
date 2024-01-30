@@ -1,119 +1,14 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    {% if title %}
-        <title>{{ title }}</title>
-    {% else %}
-        <title>Какой-то заголовок</title>
-    {% endif %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-
-    <link rel="stylesheet" href="{% static 'css/headerandfooter.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/regular.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/brands.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/solid.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/good.css' %}">
-    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <title>Title</title>
 </head>
-<body id="body_ddd">
+<body>
 
-<header>
-    <nav id="nav_header">
-        <h5 class="font-inter">Лого</h5>
-        <ul id="header_main_ul">
-            <li class="header_main">
-                <a href="" class="header_main font-inter yslygi">Услуги</a>
-            </li>
-            <li class="header_main">
-                <a href="" class="header_main font-inter">Новости</a>
-            </li>
-            <li class="header_main">
-                <a href="" class="header_main font-inter">Помощь</a>
-            </li>
-            <li class="header_main">
-                <a href="" class="header_main font-inter"
-                >Отзывы <img src="{% static 'img/стрелка для отызвы2222.png' %}" alt="иди нахуй" style="margin: 0; Width:
-              11px;
-              Height:
-              15px; margin-top: 10%; margin-left: 4%;">
-                </a>
-            </li>
-        </ul>
-        <div id="login">
-            <div id="login">
-            {% if user.is_authenticated %}
-                <a href="/" id="login_teg_a" class="font-inter">{{ user.username }}</a>
-            {% else %}
-                <li class="header_main">ЛИЧНЫЙ КАБИНЕТ</li>
-            {% endif %}
-        </div>
-        </div>
-    </nav>
-</header>
-
-<div class="container">
 {% block content %}
     
 {% endblock %}
-</div>
 
-<footer>
-    <div id="foter_div">
-        <h3 id="logo">Лого</h3>
-        <div id="kontakt">
-            <h3>Контакты</h3>
-            <div class="kontakt_div">
-                <a href=""
-                ><img src="/footer_img/Telegram (2).png" alt="" width="27vw"
-                /></a>
-            </div>
-            <div class="kontakt_div">
-                <a href=""
-                ><img src="/footer_img/envelope-at 1.png" alt="" width="27vw"
-                /></a>
-            </div>
-        </div>
-        <div id="oplata">
-            <h3 id="oplata_h3">Способы оплаты</h3>
-            <div class="oplata_div">
-                <a href=""><img src="/footer_img/Visa.png" alt="" width="70px"/></a>
-                <a href=""
-                ><img src="/footer_img/Mastercard.png" alt="" width="70px"
-                /></a>
-                <a href=""
-                ><img src="/footer_img/PayPal.png" alt="" width="70px"
-                /></a>
-            </div>
-            <div class="oplata_div">
-                <a href=""
-                ><img src="/footer_img/Bitcoin.png" alt="" width="70px"
-                /></a>
-                <a href=""
-                ><img src="/footer_img/Tether.png" alt="" width="70px"
-                /></a>
-                <a href=""
-                ><img src="/footer_img/Ethereum.png" alt="" width="70px"
-                /></a>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="{% static 'js/header.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"
-></script>
 </body>
 </html>

@@ -1,327 +1,456 @@
-{% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Главна</title>
+    <link rel="stylesheet" href="{% static 'css/headerandfooter.css' %}">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/main.css'%}" type="text/css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+        <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body id="body_ddd">
+
+    <header>
+      <nav id="nav_header">
+
+        <h5 class="font-inter">Лого</h5>
+        <ul id="header_main_ul">
+          <li class="header_main">
+            <a href="" class="header_main font-inter yslygi">Услуги</a>
+          </li>
+          <li class="header_main">
+            <a href="" class="header_main font-inter">Новости</a>
+          </li>
+          <li class="header_main">
+            <a href="" class="header_main font-inter">Помощь</a>
+          </li>
+          <li class="header_main">
+            <a href="" class="header_main font-inter reviews"
+              >Отзывы <img src="/img/стрелка для отызвы2222.png" alt="" style="margin: 0; Width:
+              11px;
+              Height:
+              15px; margin-top: -3%; margin-left: 4%;">
+            </a>
+          </li>
+        </ul>
+        <div id="login">
+{#          <a href="/" id="login_teg_a" class="font-inter">ЛИЧНЫЙ КАБИНЕТ</a>#}
+            {% if user.is_authenticated %}
+                <a href="/" id="login_teg_a" class="font-inter">{{ user.username }}</a>
+            {% else %}
+                <li class="header_main">ЛИЧНЫЙ КАБИНЕТ</li>
+            {% endif %}
+        </div>
+      </nav>
+    </header>
 
 
-{% block content %}
-	<main>
+  
+
+
+    <main>
+
+
     {% if user.is_authenticated %}
         <div class="polz">
-        <div class="polz_login">
-        <div class="foto_polzavately_redakt">
+            <div class="polz_login">
+                <div class="foto_polzavately_redakt">
 
-            <a href="{% url 'change-profile' %}"><img src="{% static 'img/pencil 1.png' %}" alt="" class="redakt"></a>
+                    <a href="{% url 'change-profile' %}"><img src="{% static 'img/pencil 1.png' %}" alt="" class="redakt"></a>
 
-            <img src="" alt="">
-        </div>
-
-        <div class="glavny_vibor_polyzovately">
-            <div class="img_history">
-                <h1 class="user_name_last_name">{{ user.username }}</h1>
-                <h1 class="user_email">{{ user.email }}</h1>
-                <a href=""><img src="{% static 'img/Group 715.png' %}" alt=""></a>
-                <a href=""><img src="{% static 'img/Group 716.png' %}" alt=""></a>
-                <div class="block_polz_login_ob_ak">
-                    <a href="">ОБ АККАУНТЕ</a></div>
-            </div>
-            {% if request.user.is_superuser %}
-                <div class="block_polz_login_ob_ak">
-                    <a href="{% url 'admin:index' %}">Админка</a>
+                    <img src="" alt="">
                 </div>
-            {% endif %}
-            <div class="out">
-                <a href="{% url 'loqout' %}">Выйти</a>
+
+          <div class="glavny_vibor_polyzovately">
+            <div class="img_history">
+                    <h1 class="user_name_last_name">{{ user.username}}</h1>
+                    <h1 class="user_email">{{ profile.balance }}</h1>
+                        <a href = ""><img src="{% static 'img/Group 715.png' %}" alt=""></a>
+                        <a href = ""><img src="{% static 'img/Group 716.png' %}" alt=""></a>
+                    <div class="block_polz_login_ob_ak">
+                      <a href="{% url 'user_profile_check' %}">ОБ АККАУНТЕ</a></div>
+                    </div>
+                    {% if request.user.is_superuser %}
+                        <div class="block_polz_login_ob_ak">
+                            <a href="{% url 'admin:index' %}">Админка</a>
+                        </div>
+                    {% endif %}
+                    <div class="out">
+                        <a href="{% url 'loqout' %}">Выйти</a>
+                    </div>
             </div>
-        </div>
+        
 
     {% else %}
         <div class="polz">
-        <div class="polz_login">
-        <div class="reg">
+            <div class="polz_login">
+                        <div class="reg">
             <div class="reg_log">
-                <div class="foto_polzavately_redakt">
-
+              <div class="foto_polzavately_redakt">
+                
                 </div>
-                <div class="voiti">
-                    <a href="{% url 'login' %}">Войти</a>
-                </div>
-                <div class="registrazii">
-                    <a href="{% url 'register' %}">Зарегистрироваться</a>
-                </div>
-            </div>
-        </div>
+              <div class="voiti">
+                <a href="{% url 'login' %}">Войти</a>
+              </div>
+              <div class="registrazii">
+                <a href="{% url 'register' %}">Зарегистрироваться</a>
+              </div>
+              </div>
+          </div>
 
-    {% endif %}
-    </div>
-    </div>
-    </div>
-    <div class="line"><img src="{% static 'img/red line 3.png' %}" alt=""
-    ></div>
-    <div class="line2"><img src="{% static 'img/red line 2.png' %}" alt=""></div>
+     {% endif %}
+    
+          </div>
+          </div>
+          </div>
+      <div class="line"><img src="{% static 'img/red line 3.png' %}" alt=""
+         ></div>
+      <div class="line2"><img src="{% static 'img/red line 2.png' %}" alt=""></div>
+    
+   
 
-
-    <section id="section_velkom">
-
+      <section id="section_velkom">
+        
 
         <div id="maindiv">
 
-            <div id="div_h6_main">
-                <h1 id="h6_main">ДОБРО ПОЖАЛОВАТЬ</h1>
-                <h1 id="sait" class="font-inter">НАКРУТКА</h1>
+          <div id="div_h6_main" >
+            <h1 id="h6_main" >ДОБРО ПОЖАЛОВАТЬ</h1>
+            <h1 id="sait" class="font-inter">НАКРУТКА</h1>
 
-                <p id="p_nakrytka_main" class="font-inter">
-                    НАКРУТКА ПОДПИСЧИКОВ, ПРОСМОТРОВ, ГОЛОСОВ И ОПРОСОВ В СОЦИАЛЬНЫХ
-                    СЕТЯХ!
-                </p>
-            </div>
-            <div id="video">
-                <iframe
-                        width="520"
-                        height="355"
-                        src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                >
-                </iframe>
-            </div>
+            <p id="p_nakrytka_main" class="font-inter">
+              НАКРУТКА ПОДПИСЧИКОВ, ПРОСМОТРОВ, ГОЛОСОВ И ОПРОСОВ В  СОЦИАЛЬНЫХ
+              СЕТЯХ!
+            </p>
+          </div>
+          <div id="video">
+            <iframe
+              width="520"
+              height="355"
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            >
+            </iframe>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section>
+      <section>
         <div class="parent">
-            <button class="telegram">
-                <p>TELEGRAM</p>
-                <i class="fa-brands fa-telegram"></i>
-            </button>
-            <button class="youtube">
-                <p>YOUTUBE</p>
-                <i class="fa-brands fa-youtube"></i>
-            </button>
-            <button class="instagram">
-                <p>INSTAGRAM</p>
-                <i class="fa-brands fa-instagram"></i>
-            </button>
-            <button class="facebook">
-                <p>FACEBOOK</p>
-                <i class="fa-brands fa-facebook"></i>
-            </button>
-            <button class="tiktok">
-                <p>TIKTOK</p>
-                <i class="fa-brands fa-tiktok"></i>
-            </button>
-            <button class="twitter">
-                <p>TWITTER</p>
-                <i class="fa-brands fa-twitter"></i>
-            </button>
-            <button class="lets_go font-inter">НАЧАТЬ РАСКРУТКУ</button>
+          <button class="telegram">
+            <p>TELEGRAM</p>
+            <img src="{% static 'img/Shape.png'%}" alt="" width="50%"  class="img_vibor"/>
+          </button>
+          <button class="youtube">
+            <p>YOUTUBE</p>
+            <img src="{% static 'img/Youtube.png'%}" alt="" width="50%" class="img_vibor"/>
+            <img src="{% static 'img/Vector.png' %}" alt="" class="cross" />
+          </button>
+          <button class="instagram">
+            <p>INSTAGRAM</p>
+            <img src="{% static 'img/Instagram.png' %}" alt="" width="50%" class="img_vibor"/>
+            <img src="{% static 'img/Vector.png' %}" alt="" class="cross" />
+          </button>
+          <button class="facebook">
+            <p>FACEBOOK</p>
+            <img src="{% static 'img/Facebook.png' %}" alt="" width="50%" class="img_vibor"/>
+            <img src="{% static 'img/Vector.png' %}" alt="" class="cross" />
+          </button>
+          <button class="tiktok">
+            <p>TIKTOK</p>
+            <img src="{% static 'img/Tik Tok.png' %}" alt="" width="50%" class="img_vibor"/>
+            <img src="{% static 'img/Vector.png' %}" alt="" class="cross" />
+          </button>
+          <button class="twitter">
+            <p>TWITTER</p>
+            <img src="{% static 'img/Twitter.png' %}" alt="" width="50%" class="img_vibor"/>
+            <img src="{% static 'img/Vector.png' %}" alt="" class="cross" />
+          </button>
+          <button class="lets_go font-inter">НАЧАТЬ РАСКРУТКУ</button>
         </div>
-    </section>
+      </section>
 
-    <section id="section_kalkylytor">
+      <section id="section_kalkylytor">
         <div class="grid_kalkylytor">
-            <div class="kalk">
-                <div class="kalkykytor">
+          <div class="kalk">
+          <div class="kalkykytor"> 
 
-                    <div class="kalkulator">
-                        <div class="nain">
-                            <p class="text_naim">Калькулятор услуг</p>
-                        </div>
-                        <div class="calculator">
-                            <div class="select">
-                                <div class="option_img"><img src="{% static 'img/Telegram.png' %}" alt="">Telegram</div>
+            <div class="kalkulator">
+              <div class="nain">
+                <p class="text_naim">Калькулятор услуг</p>
+              </div>
+              <div class="calculator">
+                 <div class="select">
+                   <div class="option_img"><img src="{% static 'img/Telegram.png' %}" alt="">Telegram</div>
+                  
+                 </div>
 
-                            </div>
-
-                            <div class="services"></div>
-                            <div>
-                                <div class="Type_of_tipping"></div>
-                                <div class="spin_option"></div>
-                            </div>
-
-                            <form action="#">
-                                <input type="text" class="input_int"/>
-                            </form>
-
-
-                            <div class="prays">
-                                <span class="par">Итого</span>
-                                <p class="prays_p">-</p>
-                            </div>
-                            <P></P>
-
-                            <div class="div_reg">
-                                <button class="button_reg">
-                                    Зарегистрироваться и оформить заказ
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="services"></div>
+                <div>
+                  <div class="Type_of_tipping"></div>
+                  <div class="spin_option"></div>
                 </div>
+    
+                <form action="#">
+                  <input type="text" class="input_int" />
+                </form>
+    
+    
+                <div class="prays">
+                  <span class="par">Итого</span>
+                  <p class="prays_p">-</p>
+                </div>
+               <P></P>
+    
+                <div class="div_reg">
+                  <button class="button_reg">
+                    Зарегистрироваться и оформить заказ
+                  </button>
+                </div>
+              </div>
             </div>
+      </div>
+    </div>
 
-            <aside class="aside_kalkykytor">
-                <div class="grafikk">
-                    <img src="{% static 'img/ГРАФИК В5НИЗ 1.png' %}" alt="" id="grafik" width="70px"/>
-                    <h3 id="grafik_h3" class="font-inter">НИЗКАЯ ЦЕНА</h3>
+        <aside class="aside_kalkykytor">
+          <div class="grafikk"> 
+          <img src="{% static 'img/ГРАФИК В5НИЗ 1.png' %}" alt="" id="grafik" width="70px" />
+          <h3 id="grafik_h3" class="font-inter">НИЗКАЯ ЦЕНА</h3>
 
-                    <p class="font-inter">
-                        Низкие цены на накрутку подписчиков, просмотров , опросов, реакций
-                        для социальных сетей.
-                    </p>
-                </div>
-
-
-                <div class="shield">
-                    <img src="{% static 'img/ЩИТ КРСНЫЙ 1.png' %}" alt="" width="15%" id="zit"/>
-                    <h3 class="font-inter">ГАРАНТИЯ РЕЗУЛЬТАТА</h3>
-
-                    <p class="font-inter">
-                        Наши методы абсолютно безопасны, и мы гарантируем результат. Ваш
-                        канал не будет подвергнут санкциям, а все заказы гарантированно
-                        анонимны.
-                    </p>
-                </div>
-
-                <div class="oclick">
-                    <img src="{% static 'img/ЧАСЫ КРАСНЫЕ 1.png' %}" alt="" width="15%" id="oclock"/>
-                    <h3 id="oclock_h3" class="font-inter">СКОРОСТЬ ПРОЦЕССА</h3>
-
-                    <p class="font-inter">
-                        Одним из важнейших требований в нашем деле - скорость!
-                    </p>
-                </div>
-            </aside>
+          <p class="font-inter">
+            Низкие цены на накрутку подписчиков, просмотров , опросов, реакций
+            для социальных сетей.
+          </p>
         </div>
-    </section>
+        
 
+        <div class="shield">
+          <img src="{% static 'img/ЩИТ КРСНЫЙ 1.png' %}" alt="" width="15%" id="zit" />
+          <h3 class="font-inter">ГАРАНТИЯ РЕЗУЛЬТАТА</h3>
 
-    <h6 id="social_h6" class="font-inter">СОЦИАЛЬНЫЕ СЕТИ</h6>
-    <div class="social">
-        <button class="div1">
+          <p class="font-inter">
+            Наши методы абсолютно безопасны, и мы гарантируем результат. Ваш
+            канал не будет подвергнут санкциям, а все заказы гарантированно
+            анонимны.
+          </p>
+        </div>
+
+        <div class="oclick">
+          <img src="{% static 'img/ЧАСЫ КРАСНЫЕ 1.png' %}" alt="" width="15%" id="oclock" />
+          <h3 id="oclock_h3" class="font-inter">СКОРОСТЬ ПРОЦЕССА</h3>
+
+          <p class="font-inter">
+            Одним из важнейших требований в нашем деле - скорость!
+          </p>
+        </div>
+        </aside>
+      </div>
+      </section>
+    
+
+        <h6 id="social_h6" class="font-inter">СОЦИАЛЬНЫЕ СЕТИ</h6>
+        <div class="social">
+          <button class="div1">
             <img
-                    src="{% static 'img/Telegram (1).png' %}"
-                    alt=""
-                    class="social_img"
-                    width="15%"
+              src="{% static 'img/Telegram (1).png' %}"
+              alt=""
+              class="social_img"
+              width="15%"
             />
             <h1>TELEGRAM</h1>
             <p class="font-inter">
-                Выпуск самого безопасного и продвинутого мессенджера в мире.
+              Выпуск самого безопасного и продвинутого мессенджера в мире.
             </p>
-        </button>
-        <button class="div2">
+          </button>
+          <button class="div2">
             <img
-                    src="{% static 'img/Youtube (1).png' %}"
-                    alt=""
-                    class="social_img"
-                    width="15%"
+              src="{% static 'img/Youtube (1).png' %}"
+              alt=""
+              class="social_img"
+              width="15%"
             />
             <h1>YOUTUBE</h1>
             <p class="font-inter">
-                Самый популярный в мире сервис видеохостинга
+              Самый популярный в мире сервис видеохостинга
             </p>
-        </button>
-        <button class="div3">
+          </button>
+          <button class="div3">
             <img
-                    src="{% static 'img/Instagram (1).png' %}"
-                    alt=""
-                    class="social_img"
-                    width="15%"
+              src="{% static 'img/Instagram (1).png' %}"
+              alt=""
+              class="social_img"
+              width="15%"
             />
             <h1>INSTAGRAM</h1>
             <p class="font-inter">
-                Социальная сеть, в которой пользователи обмениваются фотографиями
-                и видеоматериалами.
+              Социальная сеть, в которой пользователи обмениваются фотографиями
+              и видеоматериалами.
             </p>
-        </button>
-        <button class="div4">
+          </button>
+          <button class="div4">
             <img
-                    src="/img_social_seti/Facebook (1).png"
-                    alt=""
-                    class="social_img"
-                    width="15%"
+              src="/img_social_seti/Facebook (1).png"
+              alt=""
+              class="social_img"
+              width="15%"
             />
             <h1>FACEBOOK</h1>
             <p class="font-inter">Недорогое продвижение в Facebook!</p>
-        </button>
-        <button class="div5">
-            <img
-                    src="/img_social_seti/Tik Tok (2).png"
-                    alt=""
-                    class="social_img"
-                    width="15%"
+          </button>
+          <button class="div5">
+            <img 
+              src="/img_social_seti/Tik Tok (2).png"
+              alt=""
+              class="social_img"
+              width="15%"
             />
             <h1 class="tikitoki">TIKTOK</h1>
             <p class="font-inter">
-                Быстрорастущая социальная сеть, предлагающая короткие видеоролики
-                и ритмичную музыку
+              Быстрорастущая социальная сеть, предлагающая короткие видеоролики
+              и ритмичную музыку
             </p>
-        </button>
-        <button class="div6">
+          </button>
+          <button class="div6">
             <img
-                    src="/img_social_seti/Twitter (1).png"
-                    alt=""
-                    class="social_img"
-                    width="15%"
+              src="/img_social_seti/Twitter (1).png"
+              alt=""
+              class="social_img"
+              width="15%"
             />
             <h1>TWITTER</h1>
             <p class="font-inter">
-                Сохраняйте свои твиты безопасными, быстрыми и интересными!
+              Сохраняйте свои твиты безопасными, быстрыми и интересными!
             </p>
-        </button>
-    </div>
-    </section>
+          </button>
+        </div>
+      </section>
 
-    <section id="yslygi">
+      <section id="yslygi">
         <h1 class="font-inter">УСЛУГИ НАКРУТКИ</h1>
 
         <div class="yskygi_grid">
-            <div class="podpiski">
-                <img src="/yslygi/person-square 1.png" alt=""/>
-                <h6 class="font-inter">ПОДПИСЧИКИ</h6>
-                <p class="font-inter">
-                    Высококачественные подписчики на профиль канала или группу
-                </p>
-            </div>
-            <div class="reakwii">
-                <img src="/yslygi/heart-half 1.png" alt=""/>
-                <h6 class="font-inter">РЕАКЦИИ</h6>
-                <p class="font-inter">
-                    Лайки на ваши записи, фото, видео и комментарии
-                </p>
-            </div>
-            <div class="komment">
-                <img src="/yslygi/chat-right-dots 2.png" alt=""/>
-                <h6 class="font-inter">КОММЕНТАРИИ</h6>
-                <p class="font-inter">Под вашим постом, видео или фото</p>
-            </div>
-            <div class="prosmotr">
-                <img src="/yslygi/eye 1.png" alt=""/>
-                <h6 class="font-inter">ПРОСМОТРЫ</h6>
-                <p class="font-inter">
-                    Безопасный просмотр веб-страниц в социальных сетях и мессенджерах
-                </p>
-            </div>
+          <div class="podpiski">
+            <img src="/yslygi/person-square 1.png" alt="" />
+            <h6 class="font-inter">ПОДПИСЧИКИ</h6>
+            <p class="font-inter">
+              Высококачественные подписчики на профиль канала или группу
+            </p>
+          </div>
+          <div class="reakwii">
+            <img src="/yslygi/heart-half 1.png" alt="" />
+            <h6 class="font-inter">РЕАКЦИИ</h6>
+            <p class="font-inter">
+              Лайки на ваши записи, фото, видео и комментарии
+            </p>
+          </div>
+          <div class="komment">
+            <img src="/yslygi/chat-right-dots 2.png" alt="" />
+            <h6 class="font-inter">КОММЕНТАРИИ</h6>
+            <p class="font-inter">Под вашим постом, видео или фото</p>
+          </div>
+          <div class="prosmotr">
+            <img src="/yslygi/eye 1.png" alt="" />
+            <h6 class="font-inter">ПРОСМОТРЫ</h6>
+            <p class="font-inter">
+              Безопасный просмотр веб-страниц в социальных сетях и мессенджерах
+            </p>
+          </div>
         </div>
-    </div>
-    </section>
+      </div>
+      </section>
 
-    <section id="servis">
+      <section id="servis">
         <h4 class="font-inter">О СЕРВИСЕ ... лого</h4>
 
         <p class="font-inter">
-            Современное общество уже невозможно представить без социальных сетей.
-            Люди, компании и сообщества. Весь мир погрузился в мир онлайн.
-            Современная жизнь не мыслима без мобильных телефонов и компьютеров.
-            Все, что мы ценим больше всего, уже переместилось в социальные сети.
-            Работа, друзья и отношения поддерживаются и поддерживаются с помощью
-            текстовых сообщений. Но если некоторым людям достаточно просто
-            общаться в сети, то перед бизнесом и лидерами мнений стоит другая
-            задача: привлечение подписчиков и развитие сообществ в социальных
-            сетях. Прибыль больше не зарабатывается назаводах и полях, большие
-            деньги делаются в Интернете,и чем лучше вы понимаете,как процветать в
-            сети, тем больше денег вы сможете заработать. Понимание современных
-            социальных тенденций привело к идее создания профессионального,
-            востребованного продукта, способного развивать и поддерживать
-            сообщества в социальных сетях.
+          Современное общество уже невозможно представить без социальных сетей.
+          Люди, компании и сообщества. Весь мир погрузился в мир онлайн.
+          Современная жизнь не мыслима без мобильных телефонов и компьютеров.
+          Все, что мы ценим больше всего, уже переместилось в социальные сети.
+          Работа, друзья и отношения поддерживаются и поддерживаются с помощью
+          текстовых сообщений. Но если некоторым людям достаточно просто
+          общаться в сети, то перед бизнесом и лидерами мнений стоит другая
+          задача: привлечение подписчиков и развитие сообществ в социальных
+          сетях. Прибыль больше не зарабатывается назаводах и полях, большие
+          деньги делаются в Интернете,и чем лучше вы понимаете,как процветать в
+          сети, тем больше денег вы сможете заработать. Понимание современных
+          социальных тенденций привело к идее создания профессионального,
+          востребованного продукта, способного развивать и поддерживать
+          сообщества в социальных сетях.
         </p>
-    </section>
-</main>
-{% endblock %}
+      </section>
+    </main>
+
+    <footer>
+      <div id="foter_div">
+        <h3 id="logo">Лого</h3>
+        <div id="kontakt">
+          <h3>Контакты</h3>
+          <div class="kontakt_div">
+            <a href=""
+              ><img src="/footer_img/Telegram (2).png" alt="" width="27vw"
+            /></a>
+          </div>
+          <div class="kontakt_div">
+            <a href=""
+              ><img src="/footer_img/envelope-at 1.png" alt="" width="27vw"
+            /></a>
+          </div>
+        </div>
+        <div id="oplata">
+          <h3 id="oplata_h3">Способы оплаты</h3>
+          <div class="oplata_div">
+            <a href=""><img src="/footer_img/Visa.png" alt="" width="70px" /></a>
+            <a href=""
+              ><img src="/footer_img/Mastercard.png" alt="" width="70px"
+            /></a>
+            <a href=""
+              ><img src="/footer_img/PayPal.png" alt=""  width="70px"
+            /></a>
+          </div>
+          <div class="oplata_div">
+            <a href=""
+              ><img src="/footer_img/Bitcoin.png" alt=""width="70px"
+            /></a>
+            <a href=""
+              ><img src="/footer_img/Tether.png" alt=""  width="70px"
+            /></a>
+            <a href=""
+              ><img src="/footer_img/Ethereum.png" alt=""  width="70px"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+
+    <script src="{% static 'js/header.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

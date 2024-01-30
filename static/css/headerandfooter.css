@@ -38,7 +38,7 @@ header {
 }
 
 .tg_menu img {
-  margin-top: -120%;
+  margin-top: -490%;
   max-width: 280%;
 }
 
@@ -88,17 +88,19 @@ header h5 {
   list-style-type: none;
   text-decoration: none;
   display: flex;
-  padding: 2px;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
+  padding: 4px;
   line-height: 30px;
 }
 
 #login {
   margin-right: 4.2%;
   display: flex;
-  width: 10.5vw;
+  width: 200px;
   height: 4vh;
   background: #870808;
   border-radius: 5px;
@@ -146,7 +148,7 @@ header h5 {
   text-align: center;
 }
 
-.out  a {
+.ayt a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,7 +162,7 @@ header h5 {
   height: 40px;
 }
 
-.out a:hover{
+.ayt a:hover {
   background: #870808;
   color: #fff;
   border-radius: 5px;
@@ -168,7 +170,7 @@ header h5 {
     0 0 100px #870808;
 }
 
-.out {
+.ayt {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,7 +195,30 @@ header h5 {
   height: 40px; /* Добавим автоматические отступы слева и справа для центрирования */
 }
 
-.block_polz_login_ob_ak a:hover{
+.block_polz_login_ob_ak_D a {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  width: 140px;
+  height: 40px;
+}
+
+.block_polz_login_ob_ak a:hover {
+  background: #870808;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #870808, 0 0 25px #870808, 0 0 50px #870808,
+    0 0 100px #870808;
+}
+
+.block_polz_login_ob_ak_D a:hover {
   background: #870808;
   color: #fff;
   border-radius: 5px;
@@ -212,7 +237,7 @@ header h5 {
   border-radius: 20px;
 }
 
-admin a {
+.admin a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -226,7 +251,7 @@ admin a {
   height: 40px;
 }
 
-.admin a:hover{
+.admin a:hover {
   background: #870808;
   color: #fff;
   border-radius: 5px;
@@ -251,6 +276,26 @@ admin a {
   display: none;
 }
 
+.redakt_polz {
+  font-family: "Bebas Neue", sans-serif;
+
+  right: 2%;
+  position: absolute;
+  width: 18vw;
+  height: auto;
+  padding-bottom: 2%;
+  background-color: #171717;
+}
+
+.ob_ak {
+  position: absolute;
+  right: 2%;
+  width: 18vw;
+  height: auto;
+  padding-bottom: 2%;
+  background-color: #171717;
+}
+
 .polz_login {
   z-index: 2;
   position: absolute;
@@ -258,16 +303,95 @@ admin a {
   width: 18vw;
   height: auto;
   padding-bottom: 2%;
-  background-color: #3b3b3b;
+  background-color: #171717;
 }
 
 .reg_log {
   position: absolute;
+
   z-index: 2;
   width: 18vw;
   height: auto;
   padding-bottom: 2%;
+  background-color: #171717;
+}
+
+.name_email h4 {
+  font-family: Bebas Neue;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  margin: 10% 0 0 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.div_p_redakt p {
+  margin: 0;
+}
+
+.one {
+  top: 53%;
+}
+
+.two {
+  top: 64%;
+}
+
+.three {
+  top: 74%;
+}
+
+.name_email img {
+  position: absolute;
+
+  width: 19px;
+  left: 85%;
+}
+.p_one {
+  top: 52%;
+}
+
+.p_two {
+  top: 63%;
+}
+
+.p_three {
+  top: 73%;
+}
+
+.div_p_redakt {
+  position: absolute;
+  left: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #3b3b3b;
+  width: 135px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+}
+
+.vse_o_polz_redakt {
+  margin-left: 5%;
+  margin-top: 30%;
+}
+
+.vse_o_polz {
+  margin-left: 10%;
+  margin-top: 30%;
+}
+
+.foto_polzavately_redakt .foto {
+  position: absolute;
+  top: 50%;
+  left: 37%;
+  border: 5px solid #171717;
+  border-radius: 50%;
 }
 
 .voiti {
@@ -277,7 +401,7 @@ admin a {
   width: 235px;
   height: 80px;
   margin-top: 10%;
-  background-color: #252525b8;
+  background-color: #171717;
   border-radius: 20px;
 }
 
@@ -336,10 +460,190 @@ admin a {
     0 0 100px #870808;
 }
 
+.main_reviews {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  height: 20vh;
+  background-color: #171717;
+  border-bottom: 2px solid #870808;
+}
+
+.create_review a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  width: 190px;
+  height: 60px;
+}
+
+.create_review a:hover {
+  background: #870808;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #870808, 0 0 25px #870808, 0 0 50px #870808,
+    0 0 100px #870808;
+}
+
+.view_review a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  width: 190px;
+  height: 60px;
+}
+
+.view_review a:hover {
+  background: #870808;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #870808, 0 0 25px #870808, 0 0 50px #870808,
+    0 0 100px #870808;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(3px);
+}
+
+dialog {
+  border-radius: 10px;
+  border: none;
+}
+
+dialog h3 {
+  font-weight: bold;
+}
+
+.form-control {
+  resize: none;
+  border: #870808;
+}
+
+#ddddd {
+  color: #ffffff;
+  background-color: #121212;
+  border: 1px solid #7a7979;
+  transition: 0.5s all;
+}
+
+#ddddd:focus {
+  border: #870808;
+  -webkit-box-shadow: 0px 0px 30px 3px rgba(135, 8, 8, 1);
+  -moz-box-shadow: 0px 0px 30px 3px rgba(135, 8, 8, 1);
+  box-shadow: 0px 0px 30px 3px rgba(135, 8, 8, 1);
+}
+
+.form {
+  color: #fff;
+  background-color: #171717;
+  font-family: "Bebas Neue", sans-serif;
+  padding: 30px;
+  height: auto;
+  font-size: 25px;
+  height: auto;
+  width: 580px;
+  max-width: 580px;
+  font-weight: 500;
+}
+
+.button_ak_rev {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.rate > input {
+  display: none;
+}
+
+.rare {
+  display: inline-block;
+  border: 0;
+}
+
+.rate {
+  display: flex;
+  width: 40%;
+}
+
+.rate > label {
+  float: left;
+  width: 600px;
+}
+
+.rate > label:before {
+  display: inline-block;
+  font-size: 2.1rem;
+  content: "★";
+  font-family: Font Awesome;
+  margin: 0;
+  padding: 0.3rem 0.2rem;
+  cursor: pointer;
+}
+
+.rate .half:before {
+  content: "★";
+  position: absolute;
+  padding-right: 0;
+}
+
+input:checked ~ label,
+label:hover ~ label {
+  color: #ffb503;
+}
+
+input:checked + label:hover,
+input:checked ~ label:hover,
+input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label {
+  color: #cc9000;
+}
+
+#button_close,
+#button_rev {
+  font-family: "PT Sans Narrow", sans-serif;
+  margin: 0 3%;
+  transition: 0.6s all;
+  background-color: #870808;
+  border: none;
+}
+
+#button_rev {
+  width: 150px;
+}
+
+#button_close {
+  width: 90px;
+}
+
+#button_close:hover,
+#button_rev:hover {
+  background-color: #5e0707;
+  -webkit-box-shadow: 0px 0px 30px 3px rgba(135, 8, 8, 1);
+  -moz-box-shadow: 0px 0px 30px 3px rgba(135, 8, 8, 1);
+  box-shadow: 0px 0px 30px 3px rgba(135, 8, 8, 1);
+}
 #login_teg_a {
   font-family: "Bebas Neue", sans-serif;
   display: flex;
-  font-size: 2.5vh;
+  font-size: 25px;
   font-weight: 600;
   line-height: 22px;
 
@@ -352,66 +656,57 @@ admin a {
 
 footer {
   background-color: #252525;
-  width: 100%;
-  height: 208px;
+  width: auto;
+  height: auto;
+  padding: 50px;
   border: 1px solid black;
   display: flex;
 }
 
 #foter_div {
-  margin: 0;
-  width: 95%;
-
-  display: flex;
-}
-
-footer h3 {
-  font-family: "PT Sans", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 36px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #ffffff;
-}
-
-.oplata_div {
-  display: flex;
   width: 100%;
-}
-
-.oplata_div img {
-  padding: 40% 60% 0 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }
-
-#oplata {
-  margin-left: 100px;
-  height: 83%;
-  width: 1%;
+.div_logo {
+  color: #ccc;
+  font-size: 15px;
 }
-#oplata_h3 {
-  width: 300px;
-}
-
-.kontakt_div img {
-  padding: 15% 0% 0 0%;
-  margin-left: 70%;
-}
-
 #kontakt {
-  margin-left: 0;
-  width: 10%;
-  height: 83%;
+  color: #ccc;
+  width: 33%;
+  text-align: center;
 }
-
-#kontakt h3 {
-  margin-left: 100%;
+#kontakt img {
+  margin-right: 30%;
+}
+#kontakt div {
+  padding: 3% 0;
 }
 
 #logo {
-  width: 10%;
-  padding: 1% 0;
-  margin-right: 8%;
+  width: 15%;
+}
+
+#oplata_h3 {
+}
+
+#oplata {
+  margin-top: 0;
+  color: #ccc;
+  width: 20%;
+  text-align: center;
+}
+.oplata_div {
+  padding: 5% 0;
+  margin: auto;
+}
+.oplata_div img {
+  margin: 3% 3%;
+}
+/* Hide the default checkbox */
+@media screen and (max-width: 450px) {
+  .header_main {
+    visibility: hidden;
+  }
 }

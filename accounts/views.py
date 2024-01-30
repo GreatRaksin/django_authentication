@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.conf import settings
-from .forms import LoginForm, SignupForm, UserUpdateForm
-from .models import UserProfile
+from .forms import LoginForm, SignupForm, UserUpdateForm, ReviewForm
+from .models import UserProfile, ReviewsRating
 from django.contrib import messages
+from django.http import JsonResponse
 
 
 def user_login(request):
@@ -49,13 +50,12 @@ def user_signup(request):
 
 
 def user_profile(request):
-    try:
-        profile = UserProfile.objects.get(user=request.user)
-    except:
-        messages.error(request, 'Вы не вошли в аккант!')
-        return redirect('login')
-    return render(request, 'accounts/profile.html',
-                  {'profile': profile, 'title': f'Профиль {profile.user.username.upper()}'})
+    return render(request, 'index/main.html')
+
+
+def user_profile_check(request):
+    profile = UserProfile.objects.get(user=request.user)
+    return render(request, 'accounts/profile.html', {'profile': profile})
 
 
 def user_profile_update(request):
@@ -80,6 +80,27 @@ def user_loqout(request):
     return redirect('profile')
 
 
+def submit_review(request):
+    url = request.META.get('HTTP_REFERER')
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            data = form.save(commit=False)
+            review = ReviewsRating(
+                user=request.user,
+                subject=data.subject,
+                review=data.review,
+                rating=data.rating,
+            )
+            review.save()
+            messages.success(request, 'Спасибо за отзыв!')
+            return redirect('reviews_list')
+        else:
+            messages.error(request, 'Исправьте ошибки в форме')
+    return render(request, 'reviews/reviews.html')
 
 
+def reviews_list(request):
+    reviews = ReviewsRating.objects.all()
+    return render(request, 'reviews/reviews_index.html', {'reviews': reviews})
 
