@@ -11,6 +11,7 @@ class UserProfile(models.Model):
     last_name = models.CharField('Фамилия', max_length=100)
     balance = models.DecimalField(max_digits=1000, decimal_places=2, default=0)
     tg_link = models.URLField('Ссылка на телеграм', blank=True)
+    email_verified = models.BooleanField('Подтверждение Email', default=False)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name} | {self.user.username}'

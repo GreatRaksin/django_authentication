@@ -3,7 +3,8 @@ from .models import UserProfile, ReviewsRating
 
 
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'email', 'balance')
+    list_display = ('user', 'email', 'balance', 'email_verified')
+    list_filter = ('email_verified',)
     search_fields = ('email', 'user__username')
 
 
